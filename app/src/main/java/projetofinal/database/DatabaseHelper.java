@@ -17,7 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Construtor privado para evitar instâncias diretas
     private DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        this.appContext = context.getApplicationContext(); // Armazena o contexto corretamente
+        this.appContext = context.getApplicationContext();
     }
 
     // Método Singleton para obter a instância única do banco de dados
@@ -50,13 +50,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS Cliente");
         db.execSQL("DROP TABLE IF EXISTS Pedido");
-        onCreate(db);  // Recria as tabelas ao fazer upgrade
+        onCreate(db);
     }
 
     // Método para acessar o ClienteDao
     public ClienteDao clienteDao() {
         if (clienteDao == null) {
-            clienteDao = new ClienteDao(appContext);  // Passa o contexto corretamente
+            clienteDao = new ClienteDao(appContext);
         }
         return clienteDao;
 }
