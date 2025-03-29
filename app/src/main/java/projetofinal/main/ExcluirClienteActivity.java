@@ -28,7 +28,7 @@ public class ExcluirClienteActivity extends AppCompatActivity {
         edtId = findViewById(R.id.edtId);
         Button btnExcluir = findViewById(R.id.btnExcluir);
 
-        // Inicializando o banco de dados com proteção contra erros
+        // Inicializando o banco de dados
         try {
             clienteDao = DatabaseHelper.getInstance(this).clienteDao();
         } catch (Exception e) {
