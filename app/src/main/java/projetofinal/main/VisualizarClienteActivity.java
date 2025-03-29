@@ -34,7 +34,7 @@ public class VisualizarClienteActivity extends AppCompatActivity {
 
     // Metodo para carregar os clientes no RecyclerView
     private void carregarClientes() {
-        // Executa uma tarefa assíncrona para acessar o banco de dados e obter a lista de clientes
+        // Executa uma tarefa para acessar o banco de dados e obter a lista de clientes
         new Thread(() -> {
             List<Cliente> clientes = clienteDao.getAllClientes(); // Busca todos os clientes do banco
             runOnUiThread(() -> {
