@@ -15,7 +15,7 @@ public class VerProdutosActivity extends AppCompatActivity {
 
         txtProdutos = findViewById(R.id.txtProdutos);
 
-        // Carregar produtos dinamicamente do XML
+        // Carregar produtos do XML
         String[] produtosArray = getResources().getStringArray(R.array.produtos_lista);
         txtProdutos.setText(String.join("\n", produtosArray));
     }
