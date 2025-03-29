@@ -15,15 +15,15 @@ public class PedidoDao {
     private final DatabaseHelper dbHelper;
 
     public PedidoDao(Context context) {
-        this.dbHelper = DatabaseHelper.getInstance(context); // 🔹 Usando Singleton corretamente
+        this.dbHelper = DatabaseHelper.getInstance(context);
     }
 
     public void inserir(Pedido pedido) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         try {
-            ContentValues values = new ContentValues();
+            ContentValues values = new ContentValues();s
             values.put("id", pedido.getId());
-            values.put("id_cliente", pedido.getClienteId()); // 🔹 Corrigido para "id_cliente"
+            values.put("id_cliente", pedido.getClienteId());
             values.put("descricao", pedido.getDescricao());
             values.put("valor", pedido.getValor());
 
@@ -52,8 +52,8 @@ public class PedidoDao {
             if (cursor.moveToFirst()) {
                 do {
                     lista.add(new Pedido(
-                            cursor.getInt(0),  // ID
-                            cursor.getInt(1),  // Cliente ID
+                            cursor.getInt(0),  // id
+                            cursor.getInt(1),  // Cliente id
                             cursor.getString(2),  // Descrição
                             cursor.getDouble(3)  // Valor
                     ));
