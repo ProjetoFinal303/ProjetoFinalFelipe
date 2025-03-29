@@ -7,7 +7,7 @@ import androidx.room.ColumnInfo;
 @Entity(tableName = "Cliente")
 public class Cliente {
 
-    @PrimaryKey(autoGenerate = true) // 🔹 Agora o Room pode gerar IDs automaticamente
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private int id;
 
@@ -17,14 +17,13 @@ public class Cliente {
     @ColumnInfo(name = "contato")
     private String contato;
 
-    // 🔹 Construtor único para evitar erros no Room
     public Cliente(int id, String nome, String contato) {
         this.id = id;
         this.nome = nome;
         this.contato = contato;
     }
 
-    // 🔹 Getters e Setters
+    // Getters e Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
