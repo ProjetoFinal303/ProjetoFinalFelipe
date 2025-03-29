@@ -10,7 +10,7 @@ import com.example.projetofinal.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    // TAG para depuração
+    
     private static final String TAG = "MainActivity";
 
     @Override
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnExcluir = findViewById(R.id.btnExcluir);
         Button btnVerProdutos = findViewById(R.id.btnVerProdutos);
 
-        // Configuração dos botões com logs para depuração
+        // Configuração dos botões
         btnCadastrar.setOnClickListener(v -> {
             Log.d(TAG, "Botão Cadastrar clicado!");
             startActivity(new Intent(this, CadastrarClienteActivity.class));
