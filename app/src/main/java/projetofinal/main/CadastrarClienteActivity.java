@@ -35,7 +35,7 @@ public class CadastrarClienteActivity extends AppCompatActivity {
         edtContato = findViewById(R.id.edtContato);
         btnCadastrar = findViewById(R.id.btnCadastrar);
 
-        // Inicializa o banco de dados com proteção contra NullPointerException
+        // Inicializa o banco de dados
         try {
             clienteDao = DatabaseHelper.getInstance(this).clienteDao();
         } catch (Exception e) {
@@ -44,7 +44,7 @@ public class CadastrarClienteActivity extends AppCompatActivity {
             return;
         }
 
-        // Botão Cadastrar (grava os dados e volta para a tela inicial)
+        // Botão Cadastrar
         btnCadastrar.setOnClickListener(view -> {
             String idTexto = edtIdCliente.getText().toString().trim();
             String nome = edtNome.getText().toString().trim();
