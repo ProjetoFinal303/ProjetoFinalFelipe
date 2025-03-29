@@ -15,10 +15,10 @@ public class ClienteDao {
     private final DatabaseHelper dbHelper;
 
     public ClienteDao(Context context) {
-        this.dbHelper = DatabaseHelper.getInstance(context); // Usando Singleton corretamente
+        this.dbHelper = DatabaseHelper.getInstance(context);
     }
 
-    // INSERIR CLIENTE
+    // Inserir cliente
     public void inserir(Cliente cliente) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         try {
@@ -33,7 +33,7 @@ public class ClienteDao {
         }
     }
 
-    // ATUALIZAR CLIENTE
+    // Atualizar cliente
     public int atualizar(Cliente cliente) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         int linhasAfetadas = 0;
@@ -49,7 +49,7 @@ public class ClienteDao {
         return linhasAfetadas;
     }
 
-    // EXCLUIR CLIENTE
+    // Excluir cliente
     public void excluir(int id) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         try {
@@ -59,7 +59,7 @@ public class ClienteDao {
         }
     }
 
-    // LISTAR TODOS OS CLIENTES
+    // Listar todos os clientes 
     public List<Cliente> getAllClientes() {
         List<Cliente> lista = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -89,7 +89,7 @@ public class ClienteDao {
         return lista;
     }
 
-    // BUSCAR CLIENTE POR ID
+    // Buscar cliente por id
     public Cliente buscarPorId(int id) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cliente cliente = null;
@@ -117,7 +117,7 @@ public class ClienteDao {
         return cliente;
     }
 
-    // VERIFICAR SE CLIENTE EXISTE (Retorna um boolean)
+    // Verificar se o cliente existe(retorna um boolean)
     public boolean clienteExiste(int id) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = null;
