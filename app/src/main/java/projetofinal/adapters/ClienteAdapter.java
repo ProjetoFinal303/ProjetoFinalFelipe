@@ -25,12 +25,12 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClientVi
     // Criação do ViewHolder
     @Override
     public ClientViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // Inflar o layout customizado para cada item do RecyclerView
+        // Transforma o layout customizado para cada item do RecyclerView
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cliente, parent, false);
         return new ClientViewHolder(view);
     }
 
-    // Preenchimento do ViewHolder com os dados do cliente
+    //dados do cliente para preencher o ViewHolder
     @Override
     public void onBindViewHolder(ClientViewHolder holder, int position) {
         Cliente cliente = clienteList.get(position);
@@ -38,7 +38,7 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClientVi
         holder.contactTextView.setText(cliente.getContato());
 
         // Atualizando o TextView do ID com o valor do cliente
-        holder.idTextView.setText("ID: " + cliente.getId()); // Aqui você pode formatar o ID como desejar
+        holder.idTextView.setText("ID: " + cliente.getId()); 
     }
 
     // Retorna a quantidade de clientes na lista
@@ -47,19 +47,19 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClientVi
         return clienteList.size();
     }
 
-    // ViewHolder para armazenar as referências de cada item
+    // ViewHolder que armazena as referências de cada item
     public static class ClientViewHolder extends RecyclerView.ViewHolder {
 
         TextView nameTextView;
         TextView contactTextView;
-        TextView idTextView; // Novo TextView para o ID
+        TextView idTextView; 
 
         public ClientViewHolder(View itemView) {
             super(itemView);
             // Inicializa as views do layout customizado
             nameTextView = itemView.findViewById(R.id.text_cliente_nome);
             contactTextView = itemView.findViewById(R.id.text_cliente_contato);
-            idTextView = itemView.findViewById(R.id.text_cliente_id); // Inicializa o TextView para o ID
+            idTextView = itemView.findViewById(R.id.text_cliente_id); 
         }
     }
 
